@@ -49,6 +49,7 @@ function renderCourse() {
   const isReports = current.mode === 'reports';
   const isAS = current.mode === 'assignment';
   const isMalware = current.id === 'MALW';
+  const isBlockchain = current.id === 'BLOCKCHAIN';
   const needsCount = isReports && draft.detail && !reportCount(draft.count);
   const parts = partsFor(current, draft);
 
@@ -58,9 +59,10 @@ function renderCourse() {
     <div class="columns">
       <section class="panel" aria-labelledby="marks">
         <div class="panel-heading"><h3 id="marks">Your grades</h3><p>Enter grades out of 10. Leave pending items blank.</p></div>
-        ${isReports || isAS || isMalware ? `<label class="switch"><input type="checkbox" id="detail">
+        ${isReports || isAS || isMalware || isBlockchain ? `<label class="switch"><input type="checkbox" id="detail">
           ${isReports ? 'Enter each report separately' :
-            isMalware ? 'Break down the lab grades' : 'Break down the assignment and presentation'}</label>` : ''}
+            isMalware ? 'Break down the lab grades' :
+            isBlockchain ? 'Break down the midterm into two exams' : 'Break down the assignment and presentation'}</label>` : ''}
         ${isReports && draft.detail ? `<form class="count-form" id="count-form">
           <label for="count">Total number of reports</label><div><input id="count" inputmode="numeric" maxlength="2" placeholder="1–50" required>
           <button class="secondary" type="submit">Apply</button></div><small>All reports have equal weight.</small>
@@ -84,7 +86,7 @@ function renderCourse() {
   view.querySelector('#target').value = draft.target;
   if (isReports) view.querySelector('#attendance').value = draft.attendance;
   if (isReports && draft.detail) view.querySelector('#count').value = draft.count;
-  if (isReports || isAS || isMalware) view.querySelector('#detail').checked = draft.detail;
+  if (isReports || isAS || isMalware || isBlockchain) view.querySelector('#detail').checked = draft.detail;
   for (const [id] of parts) {
     const input = view.querySelector('#mark-' + id);
     if (input) input.value = draft.grades[id] ?? '';

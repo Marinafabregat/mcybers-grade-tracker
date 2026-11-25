@@ -8,7 +8,7 @@ import re
 import sqlite3
 
 ROOT = Path(__file__).resolve().parent
-COURSES = {"AS", "CSMAGT", "DPROT", "MALW", "NS", "TMA"}
+COURSES = {"AS", "CSMAGT", "DPROT", "MALW", "NS", "TMA", "BLOCKCHAIN"}
 ASSETS = {
     "/": ("index.html", "text/html; charset=utf-8"),
     "/styles.css": ("styles.css", "text/css; charset=utf-8"),
