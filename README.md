@@ -5,10 +5,10 @@
 Go to the `mcybers-grade-tracker` folder and run:
 
 ```bash
-bash iniciar.sh
+bash init.sh
 ```
 
-Open [http://localhost:8765](http://localhost:8765) in your Windows browser. To stop the app, press Ctrl+C. It requires Python 3.9 or later and does not use any external packages. If the port is already in use, run `bash iniciar.sh --port 8766` and open [http://localhost:8766](http://localhost:8766).
+Open [http://localhost:8765](http://localhost:8765) in your Windows browser. To stop the app, press Ctrl+C. It requires Python 3.9 or later and does not use any external packages. If the port is already in use, run `bash init.sh --port 8766` and open [http://localhost:8766](http://localhost:8766).
 
 If you prefer Docker, run `docker compose up --build` from the same folder and open [http://localhost:8765](http://localhost:8765). Docker Compose and an internet connection are required to download the Python image the first time.
 
