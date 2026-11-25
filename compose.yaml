@@ -1,6 +1,8 @@
 services:
   notas:
     build: .
+    # Bind inside the container; expose on the host only through localhost below.
+    command: ["python", "-u", "server.py", "--host", "0.0.0.0", "--data", "/data"]
     ports:
       - "127.0.0.1:8765:8765"
     volumes:
