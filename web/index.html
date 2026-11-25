@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Master's Grades</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <header class="top"><div class="wrap top-inner">
+    <div><h1>Master's Grades</h1><p>Master's in Cybersecurity · UPC</p></div>
+    <span class="local"><span aria-hidden="true"></span> Local records</span>
+  </div></header>
+  <main class="wrap">
+    <p id="loading" role="status">Loading grades…</p>
+    <div id="layout" class="layout" hidden>
+      <aside><h2 id="subjects">Courses</h2><nav id="courses" aria-labelledby="subjects"></nav></aside>
+      <article id="course"></article>
+    </div>
+  </main>
+</body>
+</html>
