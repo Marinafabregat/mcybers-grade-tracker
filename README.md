@@ -32,6 +32,6 @@ Both methods save grades in `data/notas.sqlite3`, alongside this file. To back u
 | AS | Two tests, 20% each. Project 30% and SecDevOps lab 30%. The project is weighted as follows: content 40%, presentation 30%, and knowledge/questions 30%. |
 | CSMAGT | Reports of equal weight, worth 60% in total. Peer assessment 20%, attendance 10%, and debates/participation 10%. Minimum attendance: 80%. |
 | DPROT | Final exam 40%; lab assignments and reports 60%. |
-| MALW | Exam 30%, lab 20%, project 30%, and presentations 20%. |
+| MALW | Exam 30%, lab 20% (can be broken down into four individual lab grades), project 30%, and presentations 20%. |
 | NS | Midterm 30%, final exam 40%, attendance and in-class performance 10%, and assignments 20%. |
 | TMA | Midterm 20%, final exam 30%, lab/project 40%, and participation 10%. |
