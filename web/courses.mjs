@@ -13,7 +13,7 @@ export const courses = [
     parts: [['midterm', 'Midterm exam', 20], ['final', 'Final exam', 30], ['project', 'Lab / project', 40], ['participation', 'Participation', 10]] },
   { id: 'BLOCKCHAIN', name: 'Blockchain Technology', page: 4,
     parts: [['midterm', 'Midterm exam', 50], ['lab', 'Lab exercises', 10], ['project', 'Project', 40]] },
-  ];
+];
 
 export function partsFor(course, draft) {
   if (course.id === 'MALW' && draft.detail) {
@@ -42,9 +42,11 @@ export function partsFor(course, draft) {
   }
   if (course.id === 'BLOCKCHAIN' && draft.detail) {
     const [, lab, project] = course.parts;
-    return [['midtermtest', 'Midterm · Test exam', 30],['midtermshort', 'Midterm · Short exam', 20],
-    lab,
-    project,
+    return [
+      ['midtest', 'Midterm · Test exam', 30],
+      ['midshort', 'Midterm · Short exam', 20],
+      lab,
+      project,
     ];
   }
   return course.parts;
