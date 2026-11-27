@@ -11,7 +11,9 @@ export const courses = [
     parts: [['midterm', 'Midterm exam', 30], ['final', 'Final exam', 40], ['class', 'Attendance and in-class performance', 10], ['work', 'Assignments', 20]] },
   { id: 'TMA', name: 'Network Traffic Monitoring and Analysis', page: 3,
     parts: [['midterm', 'Midterm exam', 20], ['final', 'Final exam', 30], ['project', 'Lab / project', 40], ['participation', 'Participation', 10]] },
-];
+  { id: 'BLOCKCHAIN', name: 'Blockchain Technology', page: 4,
+    parts: [['midterm', 'Midterm exam', 50], ['lab', 'Lab exercises', 10], ['project', 'Project', 40]] },
+  ];
 
 export function partsFor(course, draft) {
   if (course.id === 'MALW' && draft.detail) {
@@ -37,6 +39,13 @@ export function partsFor(course, draft) {
     const reports = Array.from({ length: Number(draft.count) }, (_, i) =>
       ['report' + (i + 1), 'Report ' + (i + 1), 60 / Number(draft.count)]);
     return [...reports, ...course.parts.slice(1)];
+  }
+  if (course.id === 'BLOCKCHAIN' && draft.detail) {
+    const [, lab, project] = course.parts;
+    return [['midtermtest', 'Midterm · Test exam', 30],['midtermshort', 'Midterm · Short exam', 20],
+    lab,
+    project,
+    ];
   }
   return course.parts;
 }
